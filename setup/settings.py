@@ -40,9 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'jogos.apps.JogosConfig',
 ]
-
-# usuarios.apps.UsuariosConfig
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
