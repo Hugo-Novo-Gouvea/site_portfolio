@@ -1,4 +1,12 @@
 body {
     background: rgb(17,17,17);
-    background: linear-gradient(0deg, rgba(17,17,17,1) 0%, rgba(101,0,166,1) 100%);
+    background: linear-gradient(0deg, rgba(34,34,34,1) 0%, rgba(0,0,0,1) 100%);
+  }
+
+  .card{
+    --bs-card-border-width: 0rem !important;
+    padding-right: 0rem !important;
+    padding-left: 0rem !important;
+    --bs-card-bg: rgb(45, 45, 45);   
+    color: #ffffff;
   }
