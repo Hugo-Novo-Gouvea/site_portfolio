@@ -30,3 +30,14 @@ def buscar(request):
             jogos = jogos.filter(nome__icontains=nome_a_buscar)
 
     return render (request, "jogos/buscar.html", {"cards": jogos})
+
+
+def buscarCertificado(request):
+    certificados = Certificados.objects.order_by("data_certificado").filter(publicada = True)
+
+    if "buscarCertificado" in request.GET:
+        nome_a_buscar = request.GET['buscarCertificado']
+        if nome_a_buscar:
+            certificados = certificados.filter(nome__icontains=nome_a_buscar)
+
+    return render (request, "jogos/buscarCertificado.html", {"cards": certificados})

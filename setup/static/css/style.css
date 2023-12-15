@@ -1,4 +1,4 @@
-body {
+  body {
     background: rgb(17,17,17);
     background: linear-gradient(0deg, rgba(34,34,34,1) 0%, rgba(0,0,0,1) 100%);
   }
@@ -24,7 +24,16 @@ body {
   input:focus {
     outline: none !important;
     box-shadow: none !important;
-}
+  }
+
+  /* h3 */
+  h3 {
+    background: linear-gradient(-45deg, #ffae00, #7e03aa, #00fffb);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  
 
   /* BORDER */
   .border{
@@ -118,7 +127,7 @@ body {
   }
 
   /* BUTTONS */
-  .btn {
+  .btn__custom {
     --border-color: linear-gradient(-45deg, #ffae00, #7e03aa, #00fffb);
     --border-width: .125em;
     --curve-size: .5em;
@@ -152,14 +161,14 @@ body {
     transition: color 250ms;
   }
   
-  .btn::after,
-  .btn::before {
+  .btn__custom::after,
+  .btn__custom::before {
     content: '';
     position: absolute;
     inset: 0;
   }
   
-  .btn::before {
+  .btn__custom::before {
     background: var(--border-color);
     background-size: 300% 300%;
     animation: move-bg7234 5s ease infinite;
@@ -180,7 +189,7 @@ body {
     }
   }
   
-  .btn::after {
+  .btn__custom::after {
     background: var(--bg);
     z-index: -1;
     clip-path: polygon(
@@ -204,7 +213,7 @@ body {
     transition: clip-path 500ms;
   }
   
-  .btn:where(:hover, :focus)::after {
+  .btn__custom:where(:hover, :focus)::after {
     clip-path: polygon(
                   /* Top-left */
                   calc(100% - var(--border-width)) 
@@ -234,6 +243,6 @@ body {
     transition: 200ms;
   }
   
-  .btn:where(:hover, :focus) {
+  .btn__custom:where(:hover, :focus) {
     color: #fff;
   }

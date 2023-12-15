@@ -118,7 +118,7 @@ body {
   }
 
   /* BUTTONS */
-  .btn {
+  .btn__custom {
     --border-color: linear-gradient(-45deg, #ffae00, #7e03aa, #00fffb);
     --border-width: .125em;
     --curve-size: .5em;
@@ -152,14 +152,14 @@ body {
     transition: color 250ms;
   }
   
-  .btn::after,
-  .btn::before {
+  .btn__custom::after,
+  .btn__custom::before {
     content: '';
     position: absolute;
     inset: 0;
   }
   
-  .btn::before {
+  .btn__custom::before {
     background: var(--border-color);
     background-size: 300% 300%;
     animation: move-bg7234 5s ease infinite;
@@ -180,7 +180,7 @@ body {
     }
   }
   
-  .btn::after {
+  .btn__custom::after {
     background: var(--bg);
     z-index: -1;
     clip-path: polygon(
@@ -204,7 +204,7 @@ body {
     transition: clip-path 500ms;
   }
   
-  .btn:where(:hover, :focus)::after {
+  .btn__custom:where(:hover, :focus)::after {
     clip-path: polygon(
                   /* Top-left */
                   calc(100% - var(--border-width)) 
@@ -234,6 +234,6 @@ body {
     transition: 200ms;
   }
   
-  .btn:where(:hover, :focus) {
+  .btn__custom:where(:hover, :focus) {
     color: #fff;
   }

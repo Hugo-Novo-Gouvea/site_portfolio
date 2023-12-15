@@ -3,13 +3,20 @@
 {% block content %}
     <div class="container">
         <div class="row">
+            <div class="col-md-4">
+                <h3 class="mt-5">GALERIA DE JOGOS</h3>
+            </div>
             <div class="col-md-4 border rounded ms-auto my-4 d-flex align-items-center justify-content-end p-2">
-                <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Pesquisar">
-                    <div class="input-group-append mx-1">
-                        <i class="bi bi-search" style="color: #ffae00; font-size: 1.5rem;"></i>
+                <form action="{% url 'buscar' %}" class="w-100"> <!-- Adiciona a classe w-100 para ocupar 100% da largura -->
+                    <div class="input-group">
+                        <input type="text" class="form-control" name="buscar" placeholder="Pesquisar">
+                        <div class="input-group-append mx-1">
+                            <button type="submit" class="btn btn-transparent">
+                                <i class="bi bi-search" style="color: #ffae00; font-size: 1rem;"></i>
+                            </button>
+                        </div>
                     </div>
-                </div>
+                </form>
             </div>
         </div>
         <div class="row">
@@ -25,7 +32,7 @@
             {% endfor %}
             {% else %}
             <div class="imagem__texto">
-                <p class="text-light">fotografias não encontradas</p>
+                <p class="text-light">Jogos não encontrados</p>
             </div>
             {% endif %}
         </div>
