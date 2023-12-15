@@ -13,21 +13,13 @@
             </div>
         </div>
         <div class="row">
-            {% if cards %}
-            {% for jogo in cards %}
             <div class="card col-md-4 m-3" style="width: 25.5em;">
-                <img class="card-img-top" src="{{ jogo.imagem.url }}" alt="Imagem de capa do card">
+                <img class="card-img-top" src="{% static '/assets/imagens/carina-nebula.png' %}" alt="Imagem de capa do card">
                 <div class="card-body">
-                    <h5 class="card-title">{{jogo.nome}}</h5>
-                    <p class="card-text">{{jogo.legenda}}</p>
+                    <h5 class="card-title">Título do card</h5>
+                    <p class="card-text">Um exemplo de texto rápido para construir o título do card e fazer preencher o conteúdo do card.</p>
                 </div>
             </div>
-            {% endfor %}
-            {% else %}
-            <div class="imagem__texto">
-                <p class="text-light">fotografias não encontradas</p>
-            </div>
-            {% endif %}
         </div>
     </div>
 {%endblock%}
