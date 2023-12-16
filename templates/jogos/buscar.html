@@ -23,7 +23,7 @@
             {% if cards %}
             {% for jogo in cards %}
             <div class="card col-md-4 m-3" style="width: 25.5em;">
-                <img class="card-img-top" src="{{ jogo.imagem.url }}" alt="Imagem de capa do card">
+                <img class="card-img-top" src="{{ jogo.imagem_capa.url }}" alt="Imagem de capa do card">
                 <div class="card-body">
                     <h5 class="card-title">{{jogo.nome}}</h5>
                     <p class="card-text">{{jogo.legenda}}</p>

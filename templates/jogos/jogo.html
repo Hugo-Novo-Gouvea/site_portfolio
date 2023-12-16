@@ -12,16 +12,16 @@
                 </div>
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <img src="{% static '/assets/imagens/b.png' %}" class="d-block w-100" alt="...">
+                        <img src="{{ jogo.imagem_demo_1.url }}" class="d-block w-100" alt="...">
                     </div>
                     <div class="carousel-item">
-                        <img src="{% static '/assets/imagens/b.png' %}" class="d-block w-100" alt="...">
+                        <img src="{{ jogo.imagem_demo_2.url }}" class="d-block w-100" alt="...">
                     </div>
                     <div class="carousel-item">
-                        <img src="{% static '/assets/imagens/b.png' %}" class="d-block w-100" alt="...">
+                        <img src="{{ jogo.imagem_demo_3.url }}" class="d-block w-100" alt="...">
                     </div>
                     <div class="carousel-item">
-                        <img src="{% static '/assets/imagens/b.png' %}" class="d-block w-100" alt="...">
+                        <img src="{{ jogo.imagem_demo_4.url }}" class="d-block w-100" alt="...">
                     </div>
                 </div>
                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselIndicators" data-bs-slide="prev">
@@ -36,26 +36,34 @@
         </div>
         <div class="row"> 
             <div class="col-md-10 mt-3">
-                <h2 class="text-light">JOGUINHO LOKO</h3>
+                <h2 class="text-light">{{ jogo.nome }}</h3>
             </div>
             <div class="col-md-2 mt-3">
-                <h5 class="text-light">Engine: Unity</h5>
+                <h5 class="text-light engine_custom">Engine: {{ jogo.engine }}</h5>
             </div>
         </div>
         <div class="row"> 
             <div class="col-md-10 mt-3">
-                <h5 class="text-light">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget ligula eu lectus lobortis condimentum. 
-                    Aliquam nonummy auctor massa. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. 
-                    Nulla at risus. Quisque purus magna, auctor et, sagittis ac, posuere eu, lectus. Nam mattis, felis ut adipiscing
-                </h5>
+                <h5 class="text-light">{{ jogo.descricao }}</h5>
+            </div>
+        </div>
+        {% if jogo.nome_jam != null %}
+        <div class="row"> 
+            <div class="col-md-10 mt-3">
+                <h6 class="text-light">
+                    Esse jogo foi criado durante a participação da game jam: {{ jogo.nome_jam }}
+                </h6>
             </div>
         </div>
         <div class="row"> 
             <div class="col-md-10 mt-3">
-                <h5 class="text-light">
-                </h5>
+                <h6 class="text-light">
+                    Link da Game Jam: {{ jogo.link_jam }}
+                </h6>
             </div>
         </div>
+        {% else %}
+        {% endif %}
     </div>
 {%endblock%}
 
