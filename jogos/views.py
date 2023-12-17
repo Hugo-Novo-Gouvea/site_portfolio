@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404
-from jogos.models import Jogos, Certificados
+from jogos.models import Jogos, Certificados, quemSou, softSkills, hardSkills
 
 
 def index(request):
@@ -41,3 +41,12 @@ def buscarCertificado(request):
             certificados = certificados.filter(nome__icontains=nome_a_buscar)
 
     return render (request, "jogos/buscarCertificado.html", {"cards": certificados})
+
+
+def sobreMim(request):
+    quem_sou = quemSou.objects.all()
+    soft_skills = softSkills.objects.filter(publicada = True)
+    hard_skills = hardSkills.objects.filter(publicada = True)
+    return render(request, 'jogos/sobreMim.html', {"quemSou": quem_sou,
+                                                   "softSkills": soft_skills,
+                                                   "hardSkills": hard_skills})

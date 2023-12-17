@@ -23,11 +23,13 @@
             {% if cards %}
             {% for certificado in cards %}
             <div class="card col-md-4 m-3" style="width: 25.5em;">
-                <img class="card-img-top" src="{{ certificado.imagem.url }}" alt="Imagem de capa do card">
-                <div class="card-body">
-                    <h5 class="card-title">{{certificado.nome}}</h5>
-                    <p class="card-text">{{certificado.legenda}}</p>
-                </div>
+                <a href="{% url 'certificado' certificado.id %}">
+                    <img class="card-img-top" src="{{ certificado.imagem.url }}" alt="Imagem de capa do card">
+                    <div class="card-body">
+                        <h5 class="card-title">{{certificado.nome}}</h5>
+                        <p class="card-text">{{certificado.legenda}}</p>
+                    </div>
+                </a>
             </div>
             {% endfor %}
             {% else %}

@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <img class="card-img-top mt-3" src="{{ certificado.imagem.url }}" alt="Imagem certificado">
+        </div>
+        <div class="row"> 
+            <div class="col-md-10 mt-3">
+                <h2 class="text-light">{{ certificado.nome }}</h3>
+            </div>
+        </div>
+        <div class="row"> 
+            <div class="col-md-12 mt-3">
+                <h5 class="text-light" style="word-wrap: break-word">{{ certificado.descricao }}</h5>
+            </div>
+        </div>
+        <br>
+    </div>
+{%endblock%}
+

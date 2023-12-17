@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <h3 class="mt-5">QUEM SOU</h3>
+            </div>
+        </div>
+        {% if quemSou %}
+        {% for texto in quemSou %}
+        <div class="row">
+            <div class="col-md-12">
+                <h5 class="mt-5 text-light">{{ texto.texto_inicial }}</h5>
+            </div>
+        </div>
+        {% endfor %}
+        {% endif %}
+        <div class="row">
+            <div class="col-md-12">
+                <h5 class="mt-4 text-light">Soft Skills:</h5>
+            </div>
+            {% if softSkills %}
+            {% for skills in softSkills %}
+            <div class="col-md-12">
+                <h5 class="mt-1 mx-5 text-light">- {{ skills.skill }}</h5>
+            </div>
+            {% endfor %}
+            {% endif %}
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <h5 class="mt-4 text-light">Hard Skills:</h5>
+            </div>
+            {% if hardSkills %}
+            {% for skills in hardSkills %}
+            <div class="col-md-12">
+                <h5 class="mt-1 mx-5 text-light">- {{ skills.skill }}</h5>
+            </div>
+            {% endfor %}
+            {% endif %}
+        </div>
+        {% if quemSou %}
+        {% for texto in quemSou %}
+        <div class="row">
+            <div class="col-md-12">
+                <h5 class="mt-4 text-light">{{ texto.texto_final }}</h5>
+            </div>
+        </div>
+        {% endfor %}
+        {% endif %}
+    </div>
+{%endblock%}

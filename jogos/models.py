@@ -38,3 +38,30 @@ class Certificados(models.Model):
 
     def __str__(self):
         return self.nome
+
+
+class quemSou(models.Model):
+
+    texto_inicial = models.TextField(null = False, blank = False)
+    texto_final = models.TextField(null = False, blank = False)
+
+    def __str__(self):
+        return self.texto_final
+
+
+class softSkills(models.Model):
+
+    skill = models.CharField(max_length = 100, null = False, blank = False)
+    publicada = models.BooleanField(default = False)
+
+    def __str__(self):
+        return self.skill
+
+
+class hardSkills(models.Model):
+
+    skill = models.CharField(max_length = 100, null = False, blank = False)
+    publicada = models.BooleanField(default = False)
+
+    def __str__(self):
+        return self.skill

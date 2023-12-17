@@ -6,7 +6,7 @@
             <div id="carouselIndicators" class="carousel slide">
                 <div class="carousel-indicators">
                     <button type="button" data-bs-target="#carouselIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                    <button type="button" data-bs-target="#carouselIndicaFtors" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
                     <button type="button" data-bs-target="#carouselIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
                     <button type="button" data-bs-target="#carouselIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
                 </div>
@@ -43,20 +43,20 @@
             </div>
         </div>
         <div class="row"> 
-            <div class="col-md-10 mt-3">
-                <h5 class="text-light">{{ jogo.descricao }}</h5>
+            <div class="col-md-12 mt-3">
+                <h5 class="text-light" style="word-wrap: break-word">{{ jogo.descricao }}</h5>
             </div>
         </div>
         {% if jogo.nome_jam != null %}
         <div class="row"> 
-            <div class="col-md-10 mt-3">
+            <div class="col-md-12 mt-3">
                 <h6 class="text-light">
                     Esse jogo foi criado durante a participação da game jam: {{ jogo.nome_jam }}
                 </h6>
             </div>
         </div>
         <div class="row"> 
-            <div class="col-md-10 mt-3">
+            <div class="col-md-12 mt-3">
                 <h6 class="text-light">
                     Link da Game Jam: {{ jogo.link_jam }}
                 </h6>

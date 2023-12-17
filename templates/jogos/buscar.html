@@ -7,7 +7,7 @@
                 <h3 class="mt-5">GALERIA DE JOGOS</h3>
             </div>
             <div class="col-md-4 border rounded ms-auto my-4 d-flex align-items-center justify-content-end p-2">
-                <form action="{% url 'buscar' %}" class="w-100"> <!-- Adiciona a classe w-100 para ocupar 100% da largura -->
+                <form action="{% url 'buscar' %}" class="w-100">
                     <div class="input-group">
                         <input type="text" class="form-control" name="buscar" placeholder="Pesquisar">
                         <div class="input-group-append mx-1">
@@ -23,11 +23,13 @@
             {% if cards %}
             {% for jogo in cards %}
             <div class="card col-md-4 m-3" style="width: 25.5em;">
-                <img class="card-img-top" src="{{ jogo.imagem_capa.url }}" alt="Imagem de capa do card">
-                <div class="card-body">
-                    <h5 class="card-title">{{jogo.nome}}</h5>
-                    <p class="card-text">{{jogo.legenda}}</p>
-                </div>
+                <a href="{% url 'jogo' jogo.id %}">
+                    <img class="card-img-top" src="{{ jogo.imagem_capa.url }}" alt="Imagem de capa do card">
+                    <div class="card-body">
+                        <h5 class="card-title">{{jogo.nome}}</h5>
+                        <p class="card-text">{{jogo.legenda}}</p>
+                    </div>
+                </a>
             </div>
             {% endfor %}
             {% else %}
